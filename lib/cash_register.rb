@@ -17,7 +17,11 @@ class CashRegister
     @total = @total + price*quantity
     @last_item = item
     binding.pry
-    @items << item
+    counter = 0
+    until counter == quantity
+      @items << item
+      counter += 1
+    end
   end
 
   def apply_discount
